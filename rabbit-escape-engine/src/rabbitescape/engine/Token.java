@@ -183,4 +183,8 @@ public class Token extends Thing
     {
         return type.toString();
     }
+    
+    public String toString(){
+        return this.type + "";
+    }
 }

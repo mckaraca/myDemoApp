@@ -45,6 +45,7 @@ public class World
 
     public static class UnableToAddToken extends RabbitEscapeException
     {
+
         private static final long serialVersionUID = 1L;
 
         public final Token.Type ability;

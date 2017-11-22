@@ -23,6 +23,10 @@ public class AnimationCache
                 this.animations.put( name, AnimationLoader.load( name ) );
             }
         }
+        
+        /*for(String name : names){
+            System.out.println("nameeee : " + name);
+        }*/
     }
 
     public String[] listAll()
@@ -32,6 +36,7 @@ public class AnimationCache
 
     public Animation get( String animationName )
     {
+        //System.out.println("animationName : " + animationName);
         return animations.get( animationName );
     }
 }

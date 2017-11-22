@@ -91,9 +91,11 @@ public class AnimationLoader
     {
         try
         {
+            //System.out.println("name : " + name);
             String key = "/rabbitescape/render/animations/" + name + ".rea";
-
+            //System.out.println("key : " + key);
             URL url = AnimationLoader.class.getResource( key );
+            //System.out.println("URL : " + url);
             if ( url == null )
             {
                 throw new AnimationNotFound( name );
@@ -104,6 +106,7 @@ public class AnimationLoader
         }
         catch ( IOException e )
         {
+            //System.out.println("IO Exception");
             throw new AnimationNotFound( name );
         }
     }
@@ -116,7 +119,7 @@ public class AnimationLoader
     {
         BufferedReader reader = new BufferedReader(
             new InputStreamReader( stream ) );
-
+        
         List<Frame> ret = new ArrayList<>();
         String ln;
         xOffset = 0; yOffset = 0;

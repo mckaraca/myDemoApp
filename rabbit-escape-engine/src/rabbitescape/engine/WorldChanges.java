@@ -167,19 +167,24 @@ public class WorldChanges
     throws UnableToAddToken
     {
         Integer numLeft = world.abilities.get( type );
+        //type dogru geliyo (jump)
+        //numLeft mevcut sayiyi veriyo
 
         if ( numLeft == null )
         {
+            System.out.println("NoSuchAbilityInThisWorld");
             throw new NoSuchAbilityInThisWorld( type );
         }
 
         if ( numLeft == 0 )
         {
+            System.out.println("NoneOfThisAbilityLeft");
             throw new NoneOfThisAbilityLeft( type );
         }
 
         if ( x < 0 || y < 0 || x >= world.size.width || y >= world.size.height )
         {
+            System.out.println("CantAddTokenOutsideWorld");
             throw new CantAddTokenOutsideWorld( type, x, y, world.size );
         }
 
@@ -188,7 +193,6 @@ public class WorldChanges
         {
             return;
         }
-
         tokensToAdd.add( new Token( x, y, type, world ) );
         world.abilities.put( type, numLeft - 1 );
     }

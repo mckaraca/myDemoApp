@@ -161,17 +161,23 @@ public class SpriteAnimator
 
     private Frame frameForThing( int frameNum, Thing thing )
     {
+       /* for ( int i = 0; i < 10; i++ )
+        {
+            System.out.println("frameNum : " + frameNum);    
+        }*/
+        
         if ( frameNum == -1 )
         {
             return null;
         }
         //System.out.println("thing.stateName() : " + thing.stateName());
+        //token_jumping_still
         Animation animation = animationCache.get( thing.stateName() );
         
         if ( animation == null )
         {
-            System.out.println(
-                "Missing animation for state " + thing.stateName() );
+            /*System.out.println(
+                "Missing animation for state " + thing.stateName() );*/
             return null;
         }
 
